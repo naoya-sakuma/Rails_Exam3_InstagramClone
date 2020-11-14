@@ -49,6 +49,11 @@ class PicturesController < ApplicationController
     end
   end
 
+  def confirm
+    @picture = Picture.new(picture_params)
+    render :new if @picture.invalid?
+  end
+
   private
     def set_picture
       @picture = Picture.find(params[:id])
