@@ -16,6 +16,7 @@ class PicturesController < ApplicationController
   end
 
   def create
+    @picture = current_user.pictures.build(picture_params)
     @picture = Picture.new(picture_params)
 
     respond_to do |format|
@@ -50,6 +51,7 @@ class PicturesController < ApplicationController
   end
 
   def confirm
+    @picture = current_user.pictures.build(picture_params)
     @picture = Picture.new(picture_params)
     render :new if @picture.invalid?
   end
