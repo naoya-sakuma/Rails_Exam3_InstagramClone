@@ -5,9 +5,10 @@
 <table>
   <thead>
     <tr>
-      <th>Image</th>
-      <th>Content</th>
-      <th>Profile image</th>
+      <th>画像</th>
+      <th>内容</th>
+      <th>投稿者</th>
+      <th>プロフィール写真</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -17,6 +18,7 @@
       <tr>
         <td><%= image_tag picture.image.url %></td>
         <td><%= picture.content %></td>
+        <td><%= picture.user.name %></td>
         <td><%= picture.profile_image %></td>
         <td><%= link_to 'Show', picture %></td>
         <td><%= link_to 'Edit', edit_picture_path(picture) %></td>
