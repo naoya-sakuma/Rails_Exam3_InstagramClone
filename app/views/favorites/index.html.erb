@@ -1,0 +1,14 @@
+<h1>お気に入りした画像一覧</h1>
+
+<tbody>
+  <% @favorites.each do |favorite| %>
+    <tr>
+      <td><%= image_tag favorite.favorite_users %></td>
+      <td><%= favorite.content %></td>
+      <td><%= favorite.user.name %></td>
+      <td><%= link_to 'Show', picture %></td>
+      <td><%= link_to 'Edit', edit_picture_path(picture) %></td>
+      <td><%= link_to 'Destroy', picture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</tbody>

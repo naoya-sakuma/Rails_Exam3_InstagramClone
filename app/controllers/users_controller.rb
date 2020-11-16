@@ -44,6 +44,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def favorite
+    @users = User.all
+  end
+
   private
     def set_user
       @user = User.find(params[:id])

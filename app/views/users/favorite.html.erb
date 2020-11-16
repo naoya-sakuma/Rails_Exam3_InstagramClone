@@ -1,0 +1,10 @@
+<h1>お気に入りした画像一覧</h1>
+
+<tbody>
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.favorite_pictures %></td>
+
+    </tr>
+  <% end %>
+</tbody>
