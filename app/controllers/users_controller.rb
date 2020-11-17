@@ -45,7 +45,7 @@ class UsersController < ApplicationController
   end
 
   def favorite
-    @users = User.all
+    @favorites = Favorite.where(params[:id])
   end
 
   private
