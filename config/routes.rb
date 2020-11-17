@@ -5,7 +5,8 @@ Rails.application.routes.draw do
     end
   end
   resources :sessions, only: [:new, :create, :destroy]
-  resources :users, only: [:new, :create, :show]
+  resources :users
+  post '/users/:id', to: 'users#profile_create'
   resources :favorites, only: [:create, :destroy]
   get '/favorites', to: 'users#favorite'
 

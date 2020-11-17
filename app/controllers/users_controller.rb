@@ -5,14 +5,8 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
-  def show
-  end
-
   def new
     @user = User.new
-  end
-
-  def edit
   end
 
   def create
@@ -22,6 +16,12 @@ class UsersController < ApplicationController
       else
         render :new
       end
+  end
+
+  def show
+  end
+
+  def edit
   end
 
   def update
@@ -44,8 +44,25 @@ class UsersController < ApplicationController
     end
   end
 
+  def update
+    respond_to do |format|
+      if @user.update(update_params)
+        format.html { redirect_to @user, notice: 'Picture was successfully updated.' }
+        format.json { render :show, status: :ok, location: @user }
+      else
+        format.html { render :edit }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   def favorite
     @users = User.all
+  end
+
+  def profile_create
+    @user = User.create(params[:user][:profile_image])
+    redirect_to edit_user_path
   end
 
   private
@@ -56,4 +73,9 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:name, :email, :password, :password_confirmation)
     end
+
+    def update_params
+      params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    end
+
 end

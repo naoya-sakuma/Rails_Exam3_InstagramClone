@@ -1,5 +1,5 @@
 class PicturesController < ApplicationController
-  before_action :set_picture, only: [:show, :edit, :update, :destroy]
+  before_action :set_picture, only: [:show, :update, :edit, :destroy]
 
   def index
     @pictures = Picture.all
@@ -61,6 +61,6 @@ class PicturesController < ApplicationController
     end
 
     def picture_params
-      params.require(:picture).permit(:image, :image_cache, :content, :profile_image)
+      params.require(:picture).permit(:image, :image_cache, :content)
     end
 end
