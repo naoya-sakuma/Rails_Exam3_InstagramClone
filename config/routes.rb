@@ -6,8 +6,7 @@ Rails.application.routes.draw do
   end
   resources :sessions, only: [:new, :create, :destroy]
   resources :users
-  post '/users/:id', to: 'users#profile_create'
   resources :favorites, only: [:create, :destroy]
   get '/favorites', to: 'users#favorite'
-
+  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 end

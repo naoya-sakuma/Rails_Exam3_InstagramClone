@@ -26,7 +26,7 @@ class UsersController < ApplicationController
 
   def update
     respond_to do |format|
-      if @user.update(user_params)
+      if @user.update(update_params)
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
         format.json { render :show, status: :ok, location: @user }
       else
@@ -44,25 +44,8 @@ class UsersController < ApplicationController
     end
   end
 
-  def update
-    respond_to do |format|
-      if @user.update(update_params)
-        format.html { redirect_to @user, notice: 'Picture was successfully updated.' }
-        format.json { render :show, status: :ok, location: @user }
-      else
-        format.html { render :edit }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
   def favorite
     @users = User.all
-  end
-
-  def profile_create
-    @user = User.create(params[:user][:profile_image])
-    redirect_to edit_user_path
   end
 
   private
@@ -75,7 +58,7 @@ class UsersController < ApplicationController
     end
 
     def update_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation)
+      params.require(:user).permit(:name, :email, :password, :password_confirmation, :profile_image)
     end
 
 end
