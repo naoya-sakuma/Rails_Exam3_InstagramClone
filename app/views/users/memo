@@ -1,6 +1,2 @@
-<td><%= image_tag favorite.favorite_pictures %></td>
-<td><%= user.content %></td>
-<td><%= user.user.name %></td>
-<td><%= link_to 'Show', picture %></td>
-<td><%= link_to 'Edit', edit_picture_path(picture) %></td>
-<td><%= link_to 'Destroy', picture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<%= image_tag @user.profile_image.url %>
+show.html.erbでプロフィール画像を表示するためのコード

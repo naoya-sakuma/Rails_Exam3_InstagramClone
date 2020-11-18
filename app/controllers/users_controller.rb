@@ -19,6 +19,9 @@ class UsersController < ApplicationController
   end
 
   def show
+    if current_user.id != @user.id
+    redirect_to user_path(current_user.id)
+    end
   end
 
   def edit
