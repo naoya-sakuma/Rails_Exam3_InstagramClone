@@ -1,2 +1,0 @@
-<%= image_tag @user.profile_image.url %>
-show.html.erbでプロフィール画像を表示するためのコード
