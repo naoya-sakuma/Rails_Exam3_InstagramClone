@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   resources :favorites, only: [:create, :destroy]
   get '/favorites/id', to: 'users#favorite'
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
+  root to: "users#new"
 end
