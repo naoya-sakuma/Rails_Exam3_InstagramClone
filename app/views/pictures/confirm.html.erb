@@ -1,9 +1,9 @@
-<h3>以下の内容で、送信する。</h3>
+<h3 class="picture_confirm_h3">以下の内容で、送信する。</h3>
 <%= form_with(model: @picture, local: true) do |form| %>
   <%= image_tag(@picture.image.url) if @picture.image && @picture.image.url %>
   <%= form.hidden_field :image_cache %>
   <%= form.hidden_field :content %>
-  <p>画像:<%= @picture.image %></p>
+
   <p>本文:<%= @picture.content %></p>
   <%= form.submit  "登録する" %>
   <%= form.submit "戻る", name: 'back' %>

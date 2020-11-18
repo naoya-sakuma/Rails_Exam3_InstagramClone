@@ -1,13 +1,12 @@
+<h1 class="picture_index_h1">投稿一覧</h1>
 <p id="notice"><%= notice %></p>
 
-<h1>Pictures</h1>
-
-<table>
+<table class="picture_index_table">
   <thead>
     <tr>
-      <th>画像</th>
-      <th>内容</th>
-      <th>投稿者</th>
+      <th class="picture_index_th">画像</th>
+      <th class="picture_index_th">内容</th>
+      <th class="picture_index_th">投稿者</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,13 +14,13 @@
   <tbody>
     <% @pictures.each do |picture| %>
       <tr>
-        <td><%= image_tag picture.image.url %></td>
-        <td><%= picture.content %></td>
-        <td><%= picture.user.name %></td>
-        <td><%= link_to 'Show', picture %></td>
+        <td class="picuture_index_td"><%= image_tag picture.image.url %></td>
+        <td class="picuture_index_td"><%= picture.content %></td>
+        <td class="picuture_index_td"><%= picture.user.name %></td>
+        <td><button class="picture_index_button"><%= link_to '詳細', picture %></button></td>
         <% if current_user.id == picture.user_id %>
-        <td><%= link_to 'Edit', edit_picture_path(picture) %></td>
-        <td><%= link_to 'Destroy', picture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><button class="picture_index_button"><%= link_to '編集', edit_picture_path(picture) %></button></td>
+        <td><button class="picture_index_button"><%= link_to '削除', picture, method: :delete, data: { confirm: 'Are you sure?' } %></button></td>
         <% end %>
       </tr>
     <% end %>
@@ -30,4 +29,4 @@
 
 <br>
 
-<%= link_to 'New Picture', new_picture_path %>
+<button><%= link_to '新規投稿', new_picture_path %></button>

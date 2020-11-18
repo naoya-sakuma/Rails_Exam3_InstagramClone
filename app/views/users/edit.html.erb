@@ -1,4 +1,4 @@
-<h1>Editing User</h1>
+<body class="users_edit_body">
 <%= form_with(model: @user, local: true) do |form| %>
 <% if @user.errors.any? %>
   <div id="error_explanation">
@@ -12,37 +12,47 @@
   </div>
 <% end %>
 
-<div class="field">
-  <%= form.label :name %>
-  <%= form.text_field :name %>
+<h1 class="users_edit_h1">プロフィール編集</h1>
+<div class="users_edit_div">
+<div class="field" id="field_top">
+
 </div>
 
-<div class="field">
-  <%= form.label :email %>
-  <%= form.text_field :email %>
-</div>
+<table class="field">
+  <tr>
+    <th><%= form.label :name %></th>
+    <th><%= form.text_field :name %></th>
+  </tr>
+  <tr>
+    <th><%= form.label :email %></th>
+    <th><%= form.text_field :email %></th>
+  </tr>
 
-<div class="field">
-  <%= form.label :password %>
-  <%= form.text_field :password %>
-</div>
+  <tr>
+    <th><%= form.label :password %></th>
+    <th><%= form.text_field :password %></th>
+  </tr>
 
-<div class="field">
-  <%= form.label :password_confirmation %>
-  <%= form.text_field :password_confirmation %>
-</div>
+  <tr>
+    <th><%= form.label :password_confirmation %></th>
+    <th><%= form.text_field :password_confirmation %></th>
+  </tr>
 
-<div class="field">
-  <%= form.label :profile_image, "プロフィール写真" %>
-  <%= form.file_field :profile_image %>
-</div>
+  <tr>
+    <th><%= form.label :profile_image, "プロフィール写真" %></th>
+    <th><%= form.file_field :profile_image %></th>
+  </tr>
 
-<div class="actions">
-  <%= form.submit %>
-</div>
+<tr class="actions">
+  <th></th>
+  <th><%= form.submit %></th>
+</tr>
+
+</table>
 <% end %>
 
-
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', user_path %>
-<%= link_to "投稿一覧", pictures_path %>
+<div class="user_edit_button">
+  <button><%= link_to 'プロフィール', @user %></button>
+  <button><%= link_to "投稿一覧", pictures_path %></button>
+</div>
+</body>

@@ -1,0 +1,23 @@
+.picture_index_h1 {
+  margin-top: 50px; 
+  margin-left: 30px;
+}
+.picture_index_table {
+  margin-left: 30px;
+}
+.picture_index_th {
+  width: 100px;
+  height: 50px;
+}
+.picture_index_td {
+  width: 100px;
+  height: 50px;
+}
+.picture_index_button {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.picture_index_button2 {
+  margin-top: 20px;
+  margin-left: 30px;
+}

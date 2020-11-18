@@ -1,3 +1,5 @@
+<div class="album_new_body">
+<h1>ユーザー登録</h1>
 <%= form_with(model: user, local: true) do |form| %>
   <% if user.errors.any? %>
     <div id="error_explanation">
@@ -9,29 +11,34 @@
       <% end %>
       </ul>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
-  </div>
-
-  <div class="field">
-    <%= form.label :password %>
-    <%= form.text_field :password %>
-  </div>
-
-  <div class="field">
-    <%= form.label :password_confirmation %>
-    <%= form.text_field :password_confirmation %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
 <% end %>
+
+<table class="form_new_table">
+  <tr>
+    <th><%= form.label :name, "名前" %></th>
+    <th><%= form.text_field :name %></th>
+  </tr>
+
+  <tr class="field">
+    <th><%= form.label :email, "メールアドレス" %></th>
+    <th><%= form.text_field :email %></th>
+  </tr>
+
+  <tr class="field">
+    <th><%= form.label :password, "パスワード" %></th>
+    <th><%= form.text_field :password %></th>
+  </tr>
+
+  <tr class="field">
+    <th><%= form.label :password_confirmation, "確認用パスワード" %></th>
+    <th><%= form.text_field :password_confirmation %></th>
+  </tr>
+
+  <tr>
+    <th></th>
+    <th id="make_account"><%= form.submit %><th>
+  </tr>
+  <% end %>
+</table>
+
+</div>

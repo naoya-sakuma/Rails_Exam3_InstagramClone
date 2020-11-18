@@ -12,22 +12,16 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :image %>
+    <%= form.label :image, "画像" %>
     <%= form.file_field :image %>
   </div>
 
   <div class="field">
-    <%= form.label :content %>
+    <%= form.label :content, "内容" %>
     <%= form.text_area :content %>
   </div>
 
-  <div class="field">
-    <%= form.label :profile_image %>
-    <%= form.text_area :profile_image %>
-  </div>
-
   <div class="actions">
-    <%= form.submit %>
+    <p class="picture_new_action"><%= form.submit %></p>
   </div>
 <% end %>
-<%= link_to "投稿覧画面にもどる", pictures_path %>
