@@ -15,7 +15,6 @@ class PicturesController < ApplicationController
 
   def edit
     if @picture.user_id == current_user.id
-      redirect_to edit_picture_path(@picture.id)
     else
       redirect_to user_path(current_user.id)
     end

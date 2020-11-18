@@ -25,5 +25,7 @@
 <% end %>
 </div>
 
-<%= link_to 'Edit', edit_picture_path(@picture) %> |
 <%= link_to 'Back', pictures_path %>
+<% if current_user.id == @picture.user_id %>
+  <%= link_to 'Edit', edit_picture_path(@picture) %> |
+<% end %>
