@@ -1,17 +1,14 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Image:</strong>
+<p class="picture_show_p1">
   <%= image_tag @picture.image.url %>
 </p>
 
 <p>
-  <strong>Content:</strong>
+  <strong>内容:</strong>
   <%= @picture.content %>
 </p>
 
 <p>
-  <strong>User:</strong>
+  <strong>投稿者:</strong>
   <%= @picture.user.name %>
 </p>
 
@@ -25,7 +22,7 @@
 <% end %>
 </div>
 
-<%= link_to 'Back', pictures_path %>
+<button><%= link_to '投稿一覧', pictures_path %></button>
 <% if current_user.id == @picture.user_id %>
-  <%= link_to 'Edit', edit_picture_path(@picture) %> |
+  <button><%= link_to '編集', edit_picture_path(@picture) %></button>
 <% end %>

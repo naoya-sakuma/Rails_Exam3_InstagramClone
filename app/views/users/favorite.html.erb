@@ -1,10 +1,7 @@
-<h1>お気に入りした画像</h1>
+<h1 class="users_favorite_h1">お気に入りした画像</h1>
 
 <tbody>
   <% @favorites.each do |favorite| %>
-    <tr>
-      <td　class="users_favorite_td"><%= image_tag favorite.picture.image.url %></td>
-
-    </tr>
+    <p　class="users_favorite_td"><%= image_tag favorite.picture.image.url %></p>
   <% end %>
 </tbody>
