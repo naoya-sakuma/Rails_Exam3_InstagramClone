@@ -8,10 +8,10 @@
 <% end %>
 
 <div class="profile_button">
-<% if current_user.id == @user.id %>
-  <button><%= link_to 'プロフィール編集', edit_user_path %></button>
-  <button><%= link_to "お気に入り一覧", favorites_id_path %></button>
-  <button><%= link_to '投稿一覧', pictures_path %></button>
-  <button><%= link_to "新規投稿", new_picture_path %></button>
-<% end %>
+  <% if current_user.id == @user.id %>
+    <button><%= link_to 'プロフィール編集', edit_user_path %></button>
+    <button><%= link_to "お気に入り一覧", favorites_id_path %></button>
+    <button><%= link_to '投稿一覧', pictures_path %></button>
+    <button><%= link_to "新規投稿", new_picture_path %></button>
+  <% end %>
 </div>
